@@ -1,0 +1,99 @@
+<button (click)='setIndex(0)'>
+  map
+</button>
+<button (click)='setIndex(1)'>
+  concatMap
+</button>
+<button (click)='setIndex(2)'>
+  mergeMap
+</button>
+<button (click)='setIndex(3)'>
+  switchMap
+</button>
+<div *ngIf='index===0'>
+	<h2>Simple Map: Doesn't work!</h2>
+	<div *ngIf='todosForUsers0$ | async as todos'>
+		<table>
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Title</th>
+					<th>Completed?</th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let todo of todos">
+				<tr>
+					<td>{{ todo.userId }}</td>
+					<td>{{ todo.title }}</td>
+					<td>{{ todo.completed }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div *ngIf='index===1'>
+	<h2>concatMap</h2>
+	<div *ngIf='todosForUsers1$ | async as todos'>
+		<table>
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Title</th>
+					<th>Completed?</th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let todo of todos">
+				<tr>
+					<td>{{ todo.userId }}</td>
+					<td>{{ todo.title }}</td>
+					<td>{{ todo.completed }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div *ngIf='index===2'>
+	<h2>mergeMap</h2>
+	<div *ngIf='todosForUsers2$ | async as todos'>
+		<table>
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Title</th>
+					<th>Completed?</th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let todo of todos">
+				<tr>
+					<td>{{ todo.userId }}</td>
+					<td>{{ todo.title }}</td>
+					<td>{{ todo.completed }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div *ngIf='index===3'>
+	<h2>switchMap</h2>
+	<div *ngIf='todosForUsers3$ | async as todos'>
+		<table>
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Title</th>
+					<th>Completed?</th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let todo of todos">
+				<tr>
+					<td>{{ todo.userId }}</td>
+					<td>{{ todo.title }}</td>
+					<td>{{ todo.completed }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
